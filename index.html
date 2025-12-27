@@ -4,190 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>विश्वनाथ राजाराम फडके | स्मृतिगंध</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #5d4037; /* Brownish vintage tone */
-            --secondary-color: #f5f5f5; /* Light background */
-            --accent-color: #d7ccc8;
-            --text-color: #333;
-            --white: #ffffff;
+            --bg-color: #fdfbf7; /* Off-white paper color */
+            --text-color: #2c1e1a; /* Dark brown text for softer contrast */
+            --accent-color: #8d6e63; /* Vintage brown */
+            --card-bg: #ffffff;
+            --font-heading: 'Tiro Devanagari Marathi', serif;
+            --font-body: 'Yantramanav', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
+            background-color: var(--bg-color);
             color: var(--text-color);
+            font-family: var(--font-body);
             line-height: 1.8;
+            font-size: 18px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: var(--white);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            min-height: 100vh;
         }
 
-        /* Header Section */
+        /* --- Header Section --- */
         header {
             text-align: center;
-            padding: 40px 20px 20px;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        .profile-img-container {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            background-color: #ddd; /* Placeholder color */
+            padding: 40px 0;
+            border-bottom: 2px solid #e0dcd9;
+            margin-bottom: 40px;
         }
 
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
             object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            background-color: #eee;
         }
 
         h1 {
-            font-family: 'Tiro Devanagari Marathi', serif;
-            color: var(--primary-color);
-            margin: 10px 0 5px;
+            font-family: var(--font-heading);
             font-size: 2.2rem;
+            color: #4e342e;
+            margin-bottom: 5px;
         }
 
         .dates {
             font-size: 1.1rem;
-            color: #666;
-            font-weight: bold;
+            color: #6d4c41;
+            font-weight: 500;
         }
 
-        /* Bio Section */
-        .bio-info {
-            background-color: #fafafa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid var(--primary-color);
-            font-size: 0.95rem;
+        /* --- Info Section (Bio) --- */
+        .info-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
         }
 
-        /* The specific paragraph provided */
-        .main-intro {
-            font-family: 'Tiro Devanagari Marathi', serif;
-            font-size: 1.2rem;
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Main Paragraph (Baba) --- */
+        .main-story {
+            font-family: var(--font-heading); /* Serif font for long reading */
+            font-size: 1.25rem;
             text-align: justify;
-            margin: 30px 0;
-            color: #444;
+            color: #3e2723;
+            margin-bottom: 50px;
+            line-height: 2; /* Better line spacing for Marathi */
         }
 
+        /* --- Links Grid --- */
         .section-title {
             text-align: center;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-top: 40px;
-            margin-bottom: 20px;
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #4e342e;
             position: relative;
             display: inline-block;
             width: 100%;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-        }
-
-        /* Links Grid */
-        .articles-grid {
+        .links-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            padding-bottom: 40px;
         }
 
-        .article-card {
-            background: var(--white);
-            border: 1px solid #eee;
-            border-radius: 10px;
+        .link-card {
+            background: var(--card-bg);
             padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eee;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
             color: var(--text-color);
+            transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .article-card:hover {
+        .link-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
             border-color: var(--accent-color);
         }
 
-        .article-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin: 10px 0;
         }
 
-        .article-title {
+        .card-cta {
+            font-size: 0.9rem;
+            color: var(--accent-color);
             font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--primary-color);
         }
 
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.8rem;
-            color: #888;
-        }
-
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding-top: 40px;
-            font-size: 0.8rem;
-            color: #999;
-            border-top: 1px solid #eee;
+            padding: 40px 0;
+            color: #888;
+            font-size: 0.9rem;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 600px) {
+        /* --- Mobile Responsive Adjustments --- */
+        @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
-            .container { padding: 10px; }
-            .main-intro { font-size: 1.1rem; }
+            .container { padding: 15px; }
+            .main-story { 
+                font-size: 1.1rem; 
+                text-align: left; /* Justify can look weird on small screens */
+                padding: 0 5px;
+            }
+            .links-container {
+                grid-template-columns: 1fr; /* Stack one below another on mobile */
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
+
     <header>
-        <div class="profile-img-container">
-            <img src="https://via.placeholder.com/200x200?text=Photo" alt="विश्वनाथ राजाराम फडके" class="profile-img">
-        </div>
+        <img src="https://via.placeholder.com/200x200?text=Photo" alt="विश्वनाथ राजाराम फडके" class="profile-img">
+        
         <h1>विश्वनाथ राजाराम फडके</h1>
-        <div class="dates">(१९४४ ते २००८)</div>
+        <div class="dates">१९४४ ते २००८</div>
     </header>
 
-    <section class="bio-info">
-        <p><strong>कार्यक्षेत्र:</strong> घाटगे पाटील ट्रान्स्पोर्टस्, कोल्हापूर स्टील, केजीपी आॅटो लि., आणि जिल्हा परिषद येथे काही काळ नोकरी.</p>
-        <p><strong>लेखन:</strong> दै.पुढारी, सकाळ, तसेच साप्ताहिक सकाळ येथे लेखन.</p>
-        <p style="margin-top: 10px;">आयुष्याची सुरुवातीची, प्रामुख्याने बालपण गगनबावडा यांसारख्या गावात व्यतीत केलेल्या लेखकाने उद्धृत केलेली व्यक्ती चित्रे लेखकाच्या अनुभवाचे यथार्थ चित्रण करतात. यातील उल्लेखलेल्या इतर कथा देखील वाचनीय आहेत.</p>
+    <section class="info-card">
+        <div class="info-item">
+            <strong>कार्यक्षेत्र:</strong> घाटगे पाटील ट्रान्स्पोर्टस् , कोल्हापूर स्टील, केजीपी आॅटो लि , त्याचप्रमाणे जिल्हा परिषद येथे काही काळ नोकरी.
+        </div>
+        <div class="info-item">
+            <strong>लेखन:</strong> दै.पुढारी, सकाळ, तसेच साप्ताहिक सकाळ येथे लेखन.
+        </div>
+        <div class="info-item">
+            आयुष्याची सुरुवातीची, प्रामुख्याने बालपण गगनबावडा यांसारख्या गावात व्यतीत केलेल्या लेखकाने उद्धृत केलेली व्यक्ती चित्रे लेखकाच्या अनुभवाचे यथार्थ चित्रण करतात. यातील उल्लेखलेल्या इतर कथा देखील वाचनीय आहेत.
+        </div>
     </section>
 
-    <section class="main-intro">
+    <section class="main-story">
         <p>
             ‘‘बाबा’’ म्हणजे त्यांच्या भावंडांचे विश्वनाथ दादा आणि आमचे ‘‘बाबा’’, त्यांच्या बाबतच्या आठवणी अगणित आहेत. आम्हा दोघांच्या संभाषणात बाबा त्यांच्या बालपणीचा व तरूणपणाच्या व इतर अनेक आठवणी माझे सोबत शेअर करीत असत. कित्येकदा आम्ही दोघेच घरात, प्रवासात गाडीवरून जाताना खुप काही बोलत असू. त्यातल्याच काही आठवणी बाबांनी २००६ पासून त्यांच्या हस्ताक्षरात लिहून ठेवण्यास सुरूवात केली. बहुतांश आठवणी त्यांचे जन्मस्थान गगनबावडा व लहानपणापासून त्यांचा वडिलांप्रमाणे सांभाळ करणारे त्यांचे आजोबा ज्यांना ते ‘‘तात्या’’ म्हणत त्यांच्याशी व कुटुंबातील इतर व्यक्तींशी निगडीत आहेत.
         </p>
@@ -195,34 +205,30 @@
 
     <h2 class="section-title">लेख संग्रह</h2>
     
-    <div class="articles-grid">
-        <a href="https://online.fliphtml5.com/wxerl/mhta/" target="_blank" class="article-card">
-            <span class="article-icon">📖</span>
-            <div class="article-title">पेठ वडगाव</div>
-            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+    <div class="links-container">
+        <a href="https://online.fliphtml5.com/wxerl/mhta/" target="_blank" class="link-card">
+            <div class="card-title">पेठ वडगाव</div>
+            <div class="card-cta">वाचण्यासाठी येथे क्लिक करा &rarr;</div>
         </a>
 
-        <a href="https://online.fliphtml5.com/wxerl/imcj/" target="_blank" class="article-card">
-            <span class="article-icon">✍️</span>
-            <div class="article-title">सदाशिव काका</div>
-            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        <a href="https://online.fliphtml5.com/wxerl/imcj/" target="_blank" class="link-card">
+            <div class="card-title">सदाशिव काका</div>
+            <div class="card-cta">वाचण्यासाठी येथे क्लिक करा &rarr;</div>
         </a>
 
-        <a href="https://online.fliphtml5.com/wxerl/ipyv/" target="_blank" class="article-card">
-            <span class="article-icon">👴</span>
-            <div class="article-title">तात्या</div>
-            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        <a href="https://online.fliphtml5.com/wxerl/ipyv/" target="_blank" class="link-card">
+            <div class="card-title">तात्या</div>
+            <div class="card-cta">वाचण्यासाठी येथे क्लिक करा &rarr;</div>
         </a>
 
-        <a href="https://online.fliphtml5.com/wxerl/wrsx/" target="_blank" class="article-card">
-            <span class="article-icon">🙏</span>
-            <div class="article-title">नित्यानंद महाराज</div>
-            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        <a href="https://online.fliphtml5.com/wxerl/wrsx/" target="_blank" class="link-card">
+            <div class="card-title">नित्यानंद महाराज</div>
+            <div class="card-cta">वाचण्यासाठी येथे क्लिक करा &rarr;</div>
         </a>
     </div>
 
     <footer>
-        <p>&copy; स्मृतिगंध - विश्वनाथ राजाराम फडके</p>
+        <p>&copy; स्मृतिगंध</p>
     </footer>
 
 </div>
