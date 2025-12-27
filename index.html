@@ -3,399 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>विश्वनाथ राजाराम फडके - आठवणींचा संग्रह</title>
+    <title>विश्वनाथ राजाराम फडके | स्मृतिगंध</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #5d4037; /* Brownish vintage tone */
+            --secondary-color: #f5f5f5; /* Light background */
+            --accent-color: #d7ccc8;
+            --text-color: #333;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Noto Sans Devanagari', 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
             line-height: 1.8;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
 
-        /* Navigation */
-        nav {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-
-        nav a:hover {
-            color: #667eea;
-            background-color: rgba(102, 126, 234, 0.2);
-        }
-
-        /* Header */
-        .header {
+        /* Header Section */
+        header {
             text-align: center;
-            color: white;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            padding: 40px 20px 20px;
+            border-bottom: 2px solid var(--accent-color);
         }
 
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #ddd; /* Placeholder color */
         }
 
-        .header p {
-            font-size: 1.3rem;
-            font-weight: 300;
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
+        h1 {
+            font-family: 'Tiro Devanagari Marathi', serif;
+            color: var(--primary-color);
+            margin: 10px 0 5px;
+            font-size: 2.2rem;
         }
 
-        /* Section */
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        .dates {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: bold;
         }
 
-        section h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-
-        section h3 {
-            color: #764ba2;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* About Author Section */
-        .about-author {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-left: 5px solid #667eea;
-        }
-
-        .author-content {
-            line-height: 2;
-            text-align: justify;
-            font-size: 1.05rem;
-        }
-
-        /* Biography Section */
-        .biography {
-            background: white;
-        }
-
-        .bio-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #764ba2;
-            border-radius: 5px;
-        }
-
-        .bio-item strong {
-            color: #667eea;
-        }
-
-        /* Stories Section */
-        .stories {
-            background: white;
-        }
-
-        .story-card {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+        /* Bio Section */
+        .bio-info {
+            background-color: #fafafa;
+            padding: 20px;
             border-radius: 8px;
-            border: 2px solid #667eea;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary-color);
+            font-size: 0.95rem;
         }
 
-        .story-card h4 {
-            color: #667eea;
-            margin-bottom: 0.8rem;
+        /* The specific paragraph provided */
+        .main-intro {
+            font-family: 'Tiro Devanagari Marathi', serif;
             font-size: 1.2rem;
-        }
-
-        .story-card p {
-            color: #555;
-            line-height: 1.8;
             text-align: justify;
+            margin: 30px 0;
+            color: #444;
         }
 
-        /* Links Section */
-        .links-section {
-            background: white;
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
         }
 
-        .links-grid {
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Links Grid */
+        .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 20px;
+            padding-bottom: 40px;
         }
 
-        .link-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1.5rem;
-            border-radius: 8px;
+        .article-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .link-card a {
-            color: white;
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .article-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
             display: block;
-            padding: 1rem 0;
         }
 
-        .link-card p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+        .article-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
         }
 
-        /* Footer */
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
         footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding-top: 40px;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #eee;
         }
 
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-            border-left: 3px solid #667eea;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            position: absolute;
-            left: -7.5px;
-            top: 0;
-        }
-
-        .timeline-item strong {
-            color: #764ba2;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .container { padding: 10px; }
+            .main-intro { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">मुख्य पृष्ठ</a></li>
-            <li><a href="#about">लेखक परिचय</a></li>
-            <li><a href="#biography">जीवनचरित्र</a></li>
-            <li><a href="#stories">आठवणी</a></li>
-            <li><a href="#links">उपयोगी लिंक्स</a></li>
-        </ul>
-    </nav>
 
-    <!-- Header -->
-    <div class="header" id="home">
+<div class="container">
+    
+    <header>
+        <div class="profile-img-container">
+            <img src="https://via.placeholder.com/200x200?text=Photo" alt="विश्वनाथ राजाराम फडके" class="profile-img">
+        </div>
         <h1>विश्वनाथ राजाराम फडके</h1>
-        <p>आठवणींचा संग्रह - गगनबावडा ते शहर</p>
+        <div class="dates">(१९४४ ते २००८)</div>
+    </header>
+
+    <section class="bio-info">
+        <p><strong>कार्यक्षेत्र:</strong> घाटगे पाटील ट्रान्स्पोर्टस्, कोल्हापूर स्टील, केजीपी आॅटो लि., आणि जिल्हा परिषद येथे काही काळ नोकरी.</p>
+        <p><strong>लेखन:</strong> दै.पुढारी, सकाळ, तसेच साप्ताहिक सकाळ येथे लेखन.</p>
+        <p style="margin-top: 10px;">आयुष्याची सुरुवातीची, प्रामुख्याने बालपण गगनबावडा यांसारख्या गावात व्यतीत केलेल्या लेखकाने उद्धृत केलेली व्यक्ती चित्रे लेखकाच्या अनुभवाचे यथार्थ चित्रण करतात. यातील उल्लेखलेल्या इतर कथा देखील वाचनीय आहेत.</p>
+    </section>
+
+    <section class="main-intro">
+        <p>
+            ‘‘बाबा’’ म्हणजे त्यांच्या भावंडांचे विश्वनाथ दादा आणि आमचे ‘‘बाबा’’, त्यांच्या बाबतच्या आठवणी अगणित आहेत. आम्हा दोघांच्या संभाषणात बाबा त्यांच्या बालपणीचा व तरूणपणाच्या व इतर अनेक आठवणी माझे सोबत शेअर करीत असत. कित्येकदा आम्ही दोघेच घरात, प्रवासात गाडीवरून जाताना खुप काही बोलत असू. त्यातल्याच काही आठवणी बाबांनी २००६ पासून त्यांच्या हस्ताक्षरात लिहून ठेवण्यास सुरूवात केली. बहुतांश आठवणी त्यांचे जन्मस्थान गगनबावडा व लहानपणापासून त्यांचा वडिलांप्रमाणे सांभाळ करणारे त्यांचे आजोबा ज्यांना ते ‘‘तात्या’’ म्हणत त्यांच्याशी व कुटुंबातील इतर व्यक्तींशी निगडीत आहेत.
+        </p>
+    </section>
+
+    <h2 class="section-title">लेख संग्रह</h2>
+    
+    <div class="articles-grid">
+        <a href="https://online.fliphtml5.com/wxerl/mhta/" target="_blank" class="article-card">
+            <span class="article-icon">📖</span>
+            <div class="article-title">पेठ वडगाव</div>
+            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        </a>
+
+        <a href="https://online.fliphtml5.com/wxerl/imcj/" target="_blank" class="article-card">
+            <span class="article-icon">✍️</span>
+            <div class="article-title">सदाशिव काका</div>
+            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        </a>
+
+        <a href="https://online.fliphtml5.com/wxerl/ipyv/" target="_blank" class="article-card">
+            <span class="article-icon">👴</span>
+            <div class="article-title">तात्या</div>
+            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        </a>
+
+        <a href="https://online.fliphtml5.com/wxerl/wrsx/" target="_blank" class="article-card">
+            <span class="article-icon">🙏</span>
+            <div class="article-title">नित्यानंद महाराज</div>
+            <span class="read-more">वाचण्यासाठी क्लिक करा &rarr;</span>
+        </a>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- About Author Section -->
-        <section class="about-author" id="about">
-            <h2>लेखक परिचय</h2>
-            <div class="author-content">
-                <p><strong>''बाबा''</strong> म्हणजे त्यांच्या भावंडांचे विश्वनाथ दादा आणि आमचे ''बाबा'', त्यांच्या बाबतच्या आठवणी अगणित आहेत। आम्हा दोघांच्या संभाषणात बाबा त्यांच्या बालपणीचा व तरूणपणाच्या व इतर अनेक आठवणी माझे सोबत शेअर करीत असत। </p>
-                <br>
-                <p>कित्येकदा आम्ही दोघेच घरात, प्रवासात गाडीवरून जाताना खूप काही बोलत असू। त्यातल्याच काही आठवणी बाबांनी २००६ पासून त्यांच्या हस्ताक्षरात लिहून ठेवण्यास सुरूवात केली। बहुतांश आठवणी त्यांचे जन्मस्थान गगनबावडा व लहानपणापासून त्यांचा वडिलांप्रमाणे सांभाळ करणारे त्यांचे आजोबा ज्यांना ते ''तात्या'' म्हणत त्यांच्याशी व कुटुंबातील इतर व्यक्तींशी निगडीत आहेत।</p>
-            </div>
-        </section>
-
-        <!-- Biography Section -->
-        <section id="biography">
-            <h2>जीवनचरित्र</h2>
-            
-            <h3>विश्वनाथ राजाराम फडके (१९४४ - २००८)</h3>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>जन्म:</strong> १९४४
-                </div>
-                
-                <div class="timeline-item">
-                    <strong>शिक्षा आणि कर्मव्यवहार:</strong>
-                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li>घाटगे पाटील ट्रान्स्पोर्टस्</li>
-                        <li>कोल्हापूर स्टील</li>
-                        <li>केजीपी आॅटो लिमिटेड</li>
-                        <li>जिल्हा परिषद - नोकरी</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <strong>लेखन कार्य:</strong>
-                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li>दै.पुढारी (दैनिक पुढारी)</li>
-                        <li>सकाळ - दैनिक वृत्तपत्र</li>
-                        <li>साप्ताहिक सकाळ</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <strong>अंत:</strong> २००८
-                </div>
-            </div>
-
-            <div class="bio-item">
-                <h4>आयुष्याचे महत्वाचे पहलू</h4>
-                <p>आयुष्याची सुरुवातीची, प्रामुख्याने बालपण गगनबावडा यांसारख्या गावात व्यतीत केलेल्या लेखकाने उद्धृत केलेली व्यक्ती चित्रे लेखकाच्या अनुभवाचे यथार्थ चित्रण करतात। यातील उल्लेखलेल्या इतर कथा देखील वाचनीय आहेत।</p>
-            </div>
-        </section>
-
-        <!-- Stories Section -->
-        <section id="stories">
-            <h2>आठवणींचा संग्रह</h2>
-            <p style="margin-bottom: 1.5rem; font-style: italic;">बाबांच्या आयुष्याच्या विविध पहलूंवरून लिहिलेल्या आठवणी</p>
-            
-            <div class="story-card">
-                <h4>गगनबावडा - मूळ स्थान</h4>
-                <p>जन्मभूमी गगनबावडा या गावाचे सुंदर वर्णन व तेथील बाल्यकालीन अनुभव बाबा त्यांच्या लेखनात जीवंत करून तुलते। ते गावातील सर्व मार्ग, नदी, झाड आणि मानुष आपल्या लेखनी माध्यमे वाचकांसमोर उपस्थित करते।</p>
-            </div>
-
-            <div class="story-card">
-                <h4>तात्या आणि कुटुंब</h4>
-                <p>आजोबा ज्यांना ''तात्या'' म्हणून ओळखले जात होते, त्यांच्याशी असलेल्या नातेसंबंधाची आठवणी बाबांच्या लेखनात विशेष महत्व आहे। वडिलांच्या दोन्हीची भूमिका तात्या यांनी निभावली हे बाबांच्या आयुष्याला विशेष दिशा दिली।</p>
-            </div>
-
-            <div class="story-card">
-                <h4>नोकरी व व्यावसायिक जीवन</h4>
-                <p>विविध व्यवसायांमध्ये काम करून त्या अनुभवांना बाबा आपल्या लेखनात कलात्मक रूप देते। प्रत्येक कार्यक्षेत्रात त्यांना मिळालेल्या व्यक्ती, घटना आणि शिक्षणांचे सुंदर वर्णन आढळते।</p>
-            </div>
-
-            <div class="story-card">
-                <h4>साहित्य व पत्रकारिता</h4>
-                <p>विविध वृत्तपत्रांमध्ये बाबांचे लेखन प्रकाशित झाले. सकाळ, दै.पुढारी आणि साप्ताहिक सकाळ यांसारख्या महत्वाच्या माध्यमांमध्ये त्यांचे योगदान महत्वाचे होते।</p>
-            </div>
-        </section>
-
-        <!-- Links Section -->
-        <section class="links-section" id="links">
-            <h2>उपयोगी लिंक्स</h2>
-            <p style="margin-bottom: 1.5rem;">बाबांचे साहित्य आणि संबंधित माहितीसाठी उपयोगी संसाधन:</p>
-            
-            <div class="links-grid">
-                <div class="link-card">
-                    <a href="https://sakaalnews.com" target="_blank">📰 सकाळ न्यूज</a>
-                    <p>प्रमुख मराठी वृत्तपत्र</p>
-                </div>
-
-                <div class="link-card">
-                    <a href="https://www.marathi.maharashtra.gov.in" target="_blank">📚 महाराष्ट्र संस्कृति</a>
-                    <p>महाराष्ट्र संस्कृति व साहित्य</p>
-                </div>
-
-                <div class="link-card">
-                    <a href="https://www.kolhapur.nic.in" target="_blank">🏛️ कोल्हापूर जिल्हा</a>
-                    <p>कोल्हापूर जिल्हा परिषद</p>
-                </div>
-
-                <div class="link-card">
-                    <a href="https://www.sangeethamalini.com" target="_blank">🎭 साहित्य ज्ञान</a>
-                    <p>मराठी साहित्य संरक्षण</p>
-                </div>
-
-                <div class="link-card">
-                    <a href="https://marathidictionary.com" target="_blank">📖 मराठी शब्दकोश</a>
-                    <p>मराठी भाषा शब्दकोश</p>
-                </div>
-
-                <div class="link-card">
-                    <a href="https://www.historicalkolhapur.com" target="_blank">🏰 इतिहास ज्ञान</a>
-                    <p>कोल्हापूर इतिहास</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <p><strong>विश्वनाथ राजाराम फडके - आठवणींचा संग्रह</strong></p>
-        <p>© २०२५ - सर्व हक्क सुरक्षित</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">''आठवणी ही जीवनाचा सबद आहे, त्यांना संरक्षण देणे आमचे कर्तव्य आहे।''</p>
+        <p>&copy; स्मृतिगंध - विश्वनाथ राजाराम फडके</p>
     </footer>
+
+</div>
+
 </body>
 </html>
