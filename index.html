@@ -196,15 +196,20 @@
             }
 
             .signature {
+                display: block;
+                /* Ensures it takes full width */
+                width: 100%;
                 text-align: right;
-                /* Aligns text to the right side */
-                margin-top: 20px;
-                /* Adds space between paragraph and name */
+                /* Forces text to the right side */
+                margin-top: 24px;
+                /* Space above the name */
                 font-weight: bold;
-                /* Makes the name bold */
                 color: var(--accent-color);
-                /* Uses your brown theme color */
-                font-family: var(--font-body);
+                /* Matches your theme color */
+                font-size: 1.1rem;
+                /* Slightly distinct size */
+                font-family: var(--font-heading);
+                /* Matches the story font style */
             }
 
             .links-container {
